@@ -22,7 +22,6 @@ export default function App() {
 
   return (
     <div className="bg-[#0c0c0e] text-white min-h-screen flex flex-col items-center justify-center font-sans relative overflow-hidden">
-      {/* Particle Background */}
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -43,29 +42,25 @@ export default function App() {
         }}
       />
 
-      {/* Top Nav */}
       <nav className="absolute top-6 flex gap-8 text-sm text-gray-400 z-50">
         <button onClick={() => openModal('about')} className="hover:text-white">About</button>
         <button onClick={() => openModal('services')} className="hover:text-white">Services</button>
         <button onClick={() => openModal('contact')} className="hover:text-white">Contact</button>
       </nav>
 
-      {/* Main Content */}
       <motion.h1
-        className="text-6xl md:text-8xl font-extrabold text-center z-10"
+        className="text-6xl md:text-8xl font-extrabold text-center z-10 bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        style={{ textShadow: '0 0 10px rgba(255,255,255,0.1)' }}
       >
         Silex
       </motion.h1>
       <motion.h2
-        className="text-6xl md:text-8xl font-extrabold text-center z-10 mt-[-10px]"
+        className="text-6xl md:text-8xl font-extrabold text-center z-10 mt-[-10px] bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 1 }}
-        style={{ textShadow: '0 0 10px rgba(255,255,255,0.1)' }}
       >
         Strategic Group
       </motion.h2>
@@ -83,9 +78,8 @@ export default function App() {
         &copy; {new Date().getFullYear()} Silex Strategic Group
       </footer>
 
-      {/* Modals */}
       {modal === 'about' && <Modal title="About" content="Silex Strategic Group empowers businesses through elite physical and information security consulting." />}
-      {modal === 'services' && <Modal title="Services" content="• Physical Security\n• InfoSec & Compliance\n• SBSS Certification Prep" />}
+      {modal === 'services' && <Modal title="Services" content="• Physical Security Assessment\n• InfoSec Compliance" />}
       {modal === 'contact' && <Modal title="Contact" content="Email: silexstrategicgroup@gmail.com\nPhone: 501-952-7172" />}
     </div>
   )
